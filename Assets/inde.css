@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
+
+/* Estilos generales */
+body {
+    font-family: 'Oswald', sans-serif; /* Tipografía predeterminada */
+    background-color: rgb(0, 4, 19); /* Color de fondo del cuerpo */
+    padding: 20px; /* Espaciado interno */
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Establece la altura del cuerpo al 100% del viewport */
+    margin: 0; /* Elimina el margen predeterminado */
+    overflow: hidden; /* Evita el desbordamiento horizontal */
+    flex-direction: column; /* Cambia la dirección de los elementos a vertical */
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/Assets/burbujas.gif');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.07; /* Opacidad del 20% */
+    z-index: -1; /* Asegura que el pseudo-elemento esté detrás de todo el contenido */
+}
+
+
+.welcome-message {
+    color: #b0ffff; /* Color del texto */
+    font-size: 50px; /* Tamaño del texto */
+    margin-bottom: 20px; /* Margen inferior entre párrafos */
+    font-family: 'Jersey 20', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    overflow: hidden; /* Oculta el texto que desborda el contenedor */
+    white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+    width: 80%; /* Establece un ancho fijo para el texto */
+    margin: 0 auto; /* Aplica márgenes automáticos para centrar el texto */
+    font-family: 'Jersey 20', sans-serif; /* Cambia la fuente del texto */
+    animation: typing 4s steps(40) infinite, blink-caret .2s step-end infinite; /* Ajusta la velocidad de la animación aquí */
+}
+
+.name {
+    color:  purple; /* Color del texto */
+    font-size: 18px; /* Tamaño del texto */
+    margin-bottom: 20px; /* Margen inferior entre párrafos */
+    font-family: 'Oswald', sans-serif; /* Tipografía Oswald */
+    animation: colorChange 3s ease-in-out infinite alternate;
+}
+
+@keyframes typing {
+    from { width: 0; } /* Comienza desde un ancho de 0 */
+    to { width: 100%; } /* Termina con el texto completamente visible */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #fff; }
+}
+
+@keyframes colorChange {
+    0% {
+        color:  purple;
+    }
+    50% {
+        color: rgb(153, 248, 255);
+    
+    }
+}
+
+
+
+input[type="submit"] {
+    background-color: #aceaff; /* Color de fondo del botón */
+    color: purple; /* Color del texto del botón */
+    font-family: 'Oswald', sans-serif; /* Tipografía Oswald */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: transform 0.3s; /* Agrega transición suave */
+}
+
+input[type="submit"]:hover {
+    background-color:  purple; /* Color de fondo del botón al pasar el mouse */
+    color: #aceaff;
+    transform: scale(1.1); /* Hace el botón un 10% más grande al pasar el mouse */
+}
+#close {
+    border: 2px solid #b9fff8; /* Borde sólido de 2px */
+    padding: 10px; /* Espaciado interno de 10px */
+    width: 200px; /* Ancho del rectángulo */
+    display: inline-block; /* Mostrar como bloque en línea */
+    text-align: center; /* Centrar el texto */
+    transition: all 0.3s; /* Transición suave para los cambios */
+  }
+  
+  #close:hover {
+  border-color: purple; /* Cambiar color de fondo al pasar el mouse */
+    transform: scale(1.1); /* Aumentar tamaño al pasar el mouse */
+  }
+  
+  #close a {
+    text-decoration: none; /* Quitar subrayado del enlace */
+    color: purple; /* Color del texto del enlace */
+  }
+  
+  #close a:hover {
+    color: #b9fff8; /* Cambiar color del texto del enlace al pasar el mouse */
+  }
+  

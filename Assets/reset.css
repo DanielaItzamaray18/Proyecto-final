@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
+
+/* Estilos generales */
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: rgb(0, 4, 19);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+section {
+    text-align: center;
+}
+
+h1 {
+    color: #ff6af8;
+    margin-bottom: 60px; /* Ajusta el margen inferior para dar más espacio */
+    animation: breathe 3s ease-in-out infinite; /* Agrega la animación a los elementos h1 */
+}
+
+@keyframes breathe {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
+label {
+    color: #fff;
+    margin-bottom: 55px; /* Ajusta el margen inferior para dar más espacio */
+}
+
+input[type="email"] {
+    margin-bottom: 30px; /* Ajusta el margen inferior para dar más espacio */
+}
+
+/* Botón de enviar */
+input[type="submit"] {
+    background-color: #aceaff;
+    color: purple;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: purple;
+    color: #aceaff;
+    transform: scale(1.1);
+}
+
+/* Estilos para el contenedor de las alertas */
+#alert-message {
+    position: fixed;
+    top: 80px; /* Ajusta la distancia desde la parte superior de la ventana */
+    right: 550px; /* Ajusta la distancia desde el borde derecho de la ventana */
+    background-color: rgb(218, 14, 215); /* Fondo semi-transparente para la alerta */
+    color: #efafaf; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+    display: none; /* Ocultar inicialmente */
+}
+
+/* Estilos para diferentes tipos de alertas */
+#alert-message.success {
+    background-color: rgba(144, 238, 144, 0.9); /* Verde claro para alertas de éxito */
+}
+
+#alert-message.error {
+    background-color: rgba(255, 99, 71, 0.9); /* Rojo claro para alertas de error */
+}
+
+h2 {
+    text-decoration: underline; /* Texto subrayado */
+    text-decoration-color: #aceaff;
+    color: #ff6af8; /* Color del texto */
+    font-family: 'Jersey 20', sans-serif;
+    text-align: center; /* Texto centrado */
+    position: absolute; /* Posición absoluta */
+    bottom: 20px; /* Abajo de toda la información */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centrar horizontalmente */
+    transition: font-size 0.3s; /* Transición para el efecto de cambio de tamaño de fuente */
+}
+
+h2:hover {
+    font-size: 2.1em; /* Aumentar el tamaño de fuente al 110% del tamaño original */
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/Assets/burbujas.gif'); /* Reemplaza '/Assets/burbujas.gif' con la ruta correcta a tu GIF de fondo de burbujas */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.03; /* Opacidad del 3% */
+    z-index: -1; /* Asegura que el fondo de burbujas esté detrás de todo el contenido */
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 50px; /* Ajusta la posición vertical del GIF del ovni */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px; /* Ajusta el ancho del GIF del ovni */
+    height: 200px; /* Ajusta la altura del GIF del ovni */
+    background-image: url('ovni.gif'); /* Cambia 'ovni.gif' por la ruta correcta a tu GIF de ovni */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: moveOvni 5s linear infinite; /* Aplica la animación */
+    z-index: 0; /* Asegura que el GIF del ovni esté detrás del contenido */
+}
+@keyframes moveOvni {
+    0% {
+        left: -200px; /* Posición inicial fuera del área visible */
+    }
+    100% {
+        left: 100%; /* Posición final, completamente fuera del área visible */
+    }
+}
